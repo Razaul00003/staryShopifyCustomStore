@@ -1,0 +1,106 @@
+<div class="container-fluid circular-gradient ">
+  <div class="container row">
+    <div class="col-12 col-md-12 col-lg-6">
+      <div>
+        <p class="display-2 text-dark fw-bolder ">
+          Collectez de <br>
+          <span class="display-2 text-dark fw-bolder">vrais avis</span> <br>
+          <span class="display-2  fw-bold text-primary">en quelques secondes</span>
+        </p>
+        <p>
+          Dites adieu aux avis négatifs et <br>
+          augmentez votre chiffre d’affaires
+        </p>
+        <div class="d-flex justify-content-between justify-content-sm-around">
+          <button class=" btn btn-primary rounded-pill px-sm-2 py-1 px-3 py-2 font-weight-bold ">
+            Acheter maintenant
+          </button>
+          <button class=" btn btn-primary rounded-pill btn-outline-primary  px-sm-2 py-1 px-3 py-2  font-weight-bold ">
+            Acheter maintenant
+          </button>
+        </div>
+      </div>
+
+      <!-- Your content here -->
+    </div>
+    <div class="col-12 col-md-12 col-lg-6">
+      <!-- animated content here -->
+      <div class="animation-box">
+        <div class="container-box">
+          <div class="pos-screen">
+            <img
+              class="default-screen"
+              width="300px"
+              height="auto"
+              src="https://starify.me/wp-content/uploads/2023/08/screen-min.jpeg"
+            >
+            <img
+              class="sur-google"
+              src="https://starify.me/wp-content/uploads/2022/11/front-nl.png"
+              alt=""
+            >
+          </div>
+        </div>
+      </div>
+      <!-- column 2 content -->
+      <div class='flex justify-content-center align-items-center'>
+        <p class='counter text-success fw-bold'><span>0</span> </p>
+        <p class='counter text-success fw-bold'> </p>
+      </div>
+      <div
+    </div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Text One",
+      "id": "text_one"
+    },
+    {
+      "type": "text",
+      "label": "Text Two",
+      "id": "text_two"
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "button_text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  const imageUrls = [
+    "https://starify.me/wp-content/uploads/2023/08/screen-min.jpeg",
+    "https://starify.me/wp-content/uploads/2023/08/screen3.jpg",
+    "https://starify.me/wp-content/uploads/2023/08/screen4.jpg",
+  ];
+
+  const defaultScreen = document.querySelector(".default-screen");
+  let currentIndex = 0;
+
+  function changeImage() {
+    defaultScreen.style.opacity = 0; // Start by fading out the current image
+    setTimeout(() => {
+      defaultScreen.src = imageUrls[currentIndex];
+      defaultScreen.style.opacity = 1; // Fade in the new image
+      currentIndex = (currentIndex + 1) % imageUrls.length;
+    }, 500); // Adjust the delay to match the transition duration
+  }
+
+  changeImage(); // Start with the first image
+  setInterval(changeImage, 3000);
+</script>

@@ -1,0 +1,116 @@
+{% liquid
+  assign logo = section.settings.logo
+  assign assign menu = section.settings.menu
+  assign annoucement = section.settings.announcement_bar_enabled
+  assign logoSize= section.settings.logo_max_width
+%}
+
+{% comment %}
+  Your header schema settings go here...
+{% endcomment %}
+<section class="header-section circular-gradient">
+  <div class="container">
+    {% if annoucement != false %}
+      <div class="d-flex justify-content-center align-items-center  mt-0 pt-1">
+      <span class='text-center'>Excellent {% render 'trustpilot' %}</span>
+    </div>
+      {% endif %}
+    
+    <nav class=" navbar navbar-expand-md navbar-light justify-between">
+      <a class="navbar-brand" href="{{ routes.root_url }}">
+        {% if logo != null %}
+          <img src="{{ logo | img_url }}" width="{{logoSize}}px" height="auto" alt="{{ shop.name }}">
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto d-flex p-2 justify-content-around">
+          {% for link in menu.links %}
+            <li class=" nav-item {% if link.links.size > 0 %}dropdown{% endif %} h6">
+              <a
+                class="nav-link {% if link.links.size > 0 %}dropdown-toggle{% endif %}"
+                href="{{ link.url }}"
+                {% if link.links.size > 0 %}
+                  id="navbarDropdown_{{ forloop.index }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                {% endif %}
+              >
+                {{ link.title }}
+              </a>
+              {% if link.links.size > 0 %}
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for dropLink in link.links %}
+                    <li>
+                      <a class="dropdown-item h6" href="{{ dropLink.url }}">{{ dropLink.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <button class=" btn btn-primary rounded-pill px-4 py-2 font-weight-bold ">Acheter maintenant</button>
+    </nav>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_bar_enabled",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "announcement_bar_link",
+      "label": "Announcement link",
+      "info": "Optional"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 450,
+      "step": 10,
+      "unit": "px",
+      "label": "Custom logo width",
+      "default": 250
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

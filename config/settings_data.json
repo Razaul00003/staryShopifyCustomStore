@@ -71,11 +71,17 @@
           "text_two": "",
           "button_text": ""
         }
+      },
+      "a6a971ac-b53f-49b3-b9ca-c9eac16e9114": {
+        "type": "features",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "collection-list",
-      "6849c186-03ba-4d76-be73-2d8053a7f1b4"
+      "6849c186-03ba-4d76-be73-2d8053a7f1b4",
+      "a6a971ac-b53f-49b3-b9ca-c9eac16e9114"
     ]
   },
   "presets": {

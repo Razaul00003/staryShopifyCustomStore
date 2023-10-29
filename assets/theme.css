@@ -142,59 +142,85 @@ span.compare-price {
 }
 
 // hero
-.animation-box{
-    max-width: 100%;
-    margin: auto;
-    background-color: green;
+.animation-box {
+  max-width: 100%;
+  margin: auto;
+  background-color: green;
 }
-      .container-box{
-        max-width: 380px;
-        margin: auto;
-      }
-      .pos-screen{
-        position: relative;
-        background-image: url("https://starify.me/wp-content/uploads/2023/08/phone-min.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-        z-index: 99;
-        padding-top: 177%; /* Adjust this value to maintain aspect ratio */
+.container-box {
+  max-width: 380px;
+  margin: auto;
+}
+.pos-screen {
+  position: relative;
+  background-image: url("https://starify.me/wp-content/uploads/2023/08/phone-min.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 99;
+  padding-top: 177%; /* Adjust this value to maintain aspect ratio */
+}
+.default-screen {
+  position: absolute;
+  top: 4%;
+  left: 1%;
+  max-width: 280px;
+  padding: 5px;
+  z-index: -1;
+  height: auto;
+  border-radius: 50px;
+  transition: opacity 0.5s ease;
+}
+.sur-google {
+  position: absolute;
+  top: 30%;
+  right: -25%;
+  height: auto;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+  animation: growAndMove 10s linear infinite;
+}
 
-      }
-      .default-screen{
-        position: absolute;
-        top:4%;
-        left: 1%;
-        max-width: 280px;
-        padding:5px;
-        z-index: -1;
-        height: auto;
-        border-radius: 50px;
-        transition: opacity 0.5s ease;
-      }
-      .sur-google{
-        position: absolute;
-        top:30%;
-        right: -25%;
-        height: auto;
-        width: 150px;
-        border-radius: 10px;
-        box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
-        animation: growAndMove 10s linear infinite;
-      }
+@keyframes growAndMove {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: translateX(-20%) scale(1.5);
+    z-index: -22;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-      @keyframes growAndMove {
-        0% {
-          transform: scale(1);
-        }
-        20% {
-            transform: translateX(-20%) scale(1.5);
-            z-index: -22;
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
+// hero bg
+
+.hero-extra-bg {
+  position: relative;
+  background-image: url("https://starify.me/wp-content/uploads/2023/09/dash3.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 200px;
+  /* object-fit: contain;
+  object-position: center; */
+}
+
+.svg-text1 {
+  top: 3rem;
+  left: 22rem;
+}
+.svg-text2 {
+  top: 6rem;
+  left: 34rem;
+}
+.svg-text3 {
+  top: 3rem;
+  left: 55rem;
+}

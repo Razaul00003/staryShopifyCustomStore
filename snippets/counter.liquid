@@ -1,0 +1,31 @@
+<p class=" fw-bold pt-2 h3 text-dark"><span class="text-success fw-bolder" id='counter'>0</span> avis collectés</p>
+<script>
+  
+//counter
+const counterElement = document.getElementById("counter");
+const finalCount = 160,429;
+const duration = 4000; //4s
+
+let currentCount = 0;
+let startTime = null;
+const step = finalCount / duration;
+
+function updateCounter(timestamp) {
+  if (!startTime) {
+    startTime = timestamp;
+  }
+
+  const elapsedTime = timestamp - startTime;
+  currentCount = Math.min(Math.ceil(step * elapsedTime), finalCount);
+  counterElement.textContent = currentCount;
+
+  if (currentCount < finalCount) {
+    requestAnimationFrame(updateCounter);
+  }
+}
+
+window.addEventListener("load", () => {
+  requestAnimationFrame(updateCounter);
+});
+
+</script>

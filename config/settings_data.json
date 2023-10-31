@@ -76,12 +76,60 @@
         "type": "features",
         "settings": {
         }
+      },
+      "dde80042-3514-4d33-b03d-18b1e2b6dc58": {
+        "type": "products-slider",
+        "settings": {
+        }
+      },
+      "67dad90b-77ef-4f42-bf04-8b8a86838e83": {
+        "type": "brand-slider",
+        "settings": {
+        }
+      },
+      "d59e5f9c-7f01-4fa7-b52b-f1fe329692fe": {
+        "type": "video-section",
+        "settings": {
+        }
+      },
+      "e4967e5e-4214-4325-9371-5b12ddf551e8": {
+        "type": "simple-section",
+        "settings": {
+        }
+      },
+      "39bc22ba-c99b-490c-98a9-861299e24bd7": {
+        "type": "rapid-section",
+        "settings": {
+        }
+      },
+      "5d84baec-ff2a-423d-90fa-8b16e860aa3e": {
+        "type": "review-section",
+        "settings": {
+        }
+      },
+      "4a4a1bb2-56b3-4013-83e6-4b4618602b80": {
+        "type": "blogs-section",
+        "settings": {
+        }
+      },
+      "4eaa14f2-644e-4589-b228-4acb969682ba": {
+        "type": "stand-out-section",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "collection-list",
       "6849c186-03ba-4d76-be73-2d8053a7f1b4",
-      "a6a971ac-b53f-49b3-b9ca-c9eac16e9114"
+      "a6a971ac-b53f-49b3-b9ca-c9eac16e9114",
+      "dde80042-3514-4d33-b03d-18b1e2b6dc58",
+      "67dad90b-77ef-4f42-bf04-8b8a86838e83",
+      "d59e5f9c-7f01-4fa7-b52b-f1fe329692fe",
+      "e4967e5e-4214-4325-9371-5b12ddf551e8",
+      "39bc22ba-c99b-490c-98a9-861299e24bd7",
+      "5d84baec-ff2a-423d-90fa-8b16e860aa3e",
+      "4a4a1bb2-56b3-4013-83e6-4b4618602b80",
+      "4eaa14f2-644e-4589-b228-4acb969682ba"
     ]
   },
   "presets": {

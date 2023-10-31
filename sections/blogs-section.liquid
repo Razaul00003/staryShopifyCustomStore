@@ -1,0 +1,57 @@
+{% assign allArticles = blogs.news.articles %}
+
+<div class="simple-bg">
+  <div class="container py-5">
+    <div class="d-flex justify-content-between">
+      <div><span class="bg-dark text-primary rounded px-1 " width="50px">Starify.me</span> <br></div>
+      <button class=" btn btn-primary rounded-pill btn-outline-primary  px-sm-2 py-1 px-3 py-2 font-weight-bold">
+        Acheter maintenant
+      </button>
+    </div>
+    <p class="text-gray fs-1">Les conseils de nos experts</p>
+    <p class="text-gray fs-5 mb-3 ">
+      Lisez les articles de nos experts pour trouver les astuces afin d’éliminer les mauvais avis.
+    </p>
+    <div class="row">
+      {{ blogs.first.title }}
+      {% for article in allArticles %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="p-2 w-100">
+            {{ article.featured_image }}
+            {% if article.image != blank %}
+              <img
+                src="{{ article.image | img_url:'thumbnail' }}"
+                width="100%"
+                height="240px"
+                class="rounded rounded-4"
+                alt="{{ article.title }}"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+            <p class="mt-3 fs-4">{{ article.title }}</p>
+            <p class="mt-1 fs-6">{{ article.excerpt_or_content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog section",
+  "settings": [],
+  "presets": [
+  {
+    "name": "Block section",
+    "category": "Collection"  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

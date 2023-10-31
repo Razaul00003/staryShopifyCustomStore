@@ -1,0 +1,59 @@
+<div class="container py-5 mt-4 ">
+  <div class="bg-primary rounded rounded-3 p-2">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <p class="fs-1 fw-bold text-dark ps-2">Augmentez vos notes et distinguez-vous</p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center position-relative">
+        <div class="position-relative">
+          <div class="gradient-container rounded-circle"></div>
+          <img
+            width="500px"
+            class="position-absolute stand-out-image-main"
+            src="https://starify.me/wp-content/uploads/2021/07/main-canvas-6380d6c2cf0029422bc688b1-1024x1024.png"
+          >
+
+          <img
+            width="100%"
+            class="position-absolute stand-out-image stand-out-image-2"
+            src="https://starify.me/wp-content/uploads/2021/07/main-canvas-6380d6c2cf0029422bc688b1_00000.png"
+          >
+
+          <img
+            width="100%"
+            class="position-absolute stand-out-image stand-out-image-3"
+            src="https://starify.me/wp-content/uploads/2021/07/main-canvas-6380d6c2cf0029422bc688db1_00000.png"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Stand out name",
+  "settings": [], "presets": [
+  {
+    "name": "Stand out section",
+    "category": "Collection"  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+<script>
+  const images = document.querySelectorAll('.stand-out-image');
+
+  images.forEach(image => {
+      image.addEventListener('mouseenter', () => {
+          image.style.transform = 'translateX(-10px)';
+      });
+
+      image.addEventListener('mouseleave', () => {
+          image.style.transform = 'translateX(0)';
+      });
+  });
+</script>

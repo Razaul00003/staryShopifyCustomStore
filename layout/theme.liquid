@@ -7,6 +7,15 @@
     <link rel="canonical" href="{{ canonical_url }}">
 
     <link href="{{ 'bootstrap.min.css' | asset_url }}" rel="stylesheet">
+    <link href="{{ 'owl.carousel.min.css' | asset_url }}" rel="stylesheet">
+    <link href="{{ 'owl.theme.default.min.css' | asset_url }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>
       {% if template.name == 'index' %}
         {{ shop.name }}
@@ -25,8 +34,9 @@
   </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
-
-    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
     <!-- Header start -->
     {% section 'header' %}
     <!-- Header end -->
@@ -34,9 +44,8 @@
       {{ content_for_layout }}
     </main>
     <!-- Footer start -->
-    <!-- {% section 'footer' %} -->
+    {% section 'footer' %}
     <!-- Footer end -->
     <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
-
   </body>
 </html>

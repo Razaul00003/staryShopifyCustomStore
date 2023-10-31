@@ -1,0 +1,106 @@
+<div class="container animation-container">
+  <div>
+    <p class="text-center fs-1 my-sm-1 my-md-2 my-lg-3 p-2 fw-bold">Ils ont choisi nos cartes</p>
+  </div>
+  <div class="owl-carousel owl-theme animation-content">
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand1.png' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand10.png' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand11.png' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand12.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand13.png' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand14.png' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand2.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand3.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand4.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm rounded">
+      <div class="p-2">
+        <img src="{{ 'brand5.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand6.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand7.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand8.webp' | asset_url }}">
+      </div>
+    </div>
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <img src="{{ 'brand9.png' | asset_url }}">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:3
+          },
+          600:{
+              items:4
+          },
+          1000:{
+              items:5
+          }
+      }
+  })
+</script>
+{% schema %}
+{
+  "name": "Brand slider",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Brand Slider",
+      "category": "Collection"  }
+  ]
+}
+{% endschema %}

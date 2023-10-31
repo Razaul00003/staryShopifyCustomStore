@@ -1,0 +1,55 @@
+{%- assign collection = collections.first %}
+
+<div class="owl-carousel owl-theme">
+  {% for product in collection.products %}
+    <div class="item shadow-sm">
+      <div class="p-2">
+        <div class="p-2">
+          <a href="{{ product.url }}">
+            {% if product.featured_image != blank %}
+              <img
+                src="{{ product.featured_image | img_url:'medium' }}"
+                width="150px"
+                height="auto"
+                class=""
+                alt="{{ product.title }}"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+          </a>
+        </div>
+        <div class="p-2 text-center">
+          <p class="fs-4">{{ product.title }}</p>
+          <p class="fs-5 mb-2 text-gray">
+            <span class="custom-strikethrough text-gray-dark pe-3">{{ product.compare_at_price }}</span>
+            {{- product.price }}
+          </p>
+
+          <div class="action">
+            <a href="{{ product.url }}" class="btn btn-primary w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:3
+          },
+          1000:{
+              items:4
+          }
+      }
+  })
+</script>

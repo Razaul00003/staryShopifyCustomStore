@@ -1,0 +1,51 @@
+<div class="container py-sm-2 py-md-5 ">
+  <div class="row justify-content-between align-items-center ">
+    <div class="col-sm-12 col-md-6">
+      <div class="">
+        <p>
+          <span class="bg-dark text-primary rounded p-1">Témoignanges</span>
+        </p>
+        <p class="text-gray fs-1 pb-3">Un résultat visible et rapide</p>
+        <p class="text-gray fs-5 ">Pour briller sur Google, la recette est simple :</p>
+        <p class="text-gray fs-5">🥇 Une bonne note globale</p>
+        <p class="text-gray fs-5">🥈 Un nombre important d’avis</p>
+        <p class="text-gray fs-5">🥉 Une bonne position dans les résultats de recherche</p>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="w-100  position-relative">
+        <img src="https://starify.me/wp-content/uploads/2022/11/avis-min-1-min.png" class="w-100">
+        <div class="position-absolute top-0  rotate-image"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+      // Get a reference to the rotating image element
+        const image = document.querySelector('.rotate-image');
+
+        // Add an event listener to detect scrolling
+        window.addEventListener('scroll', () => {
+            // Calculate the rotation angle based on the scroll position
+            const scrollPosition = window.scrollY;
+            const rotationAngle = scrollPosition / 5; // Adjust the division factor as needed
+
+            // Apply the rotation using CSS transform
+            image.style.transform = `rotate(${rotationAngle}deg)`;
+        });
+</script>
+{% schema %}
+  {
+  "name": "Rapid section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Rapid section",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}

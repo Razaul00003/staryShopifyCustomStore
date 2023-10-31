@@ -1,68 +1,45 @@
-<footer>
-
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
-
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+{% assign menu = section.settings.footer_linklist %}
+<footer class="">
+  <div class="container py-5 mt-5">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <img width="200px" src="https://starify.me/wp-content/uploads/2022/12/starify.svg" class="m-auto">
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+        <div>
+          <ul class="d-flex p-2 justify-content-between list-unstyled">
+            {% for link in menu.links %}
+              <li class="text-gray">
+                <a class="h6 text-decoration-none text-reset p-2 fs-6" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <p>© 2023 Copyright Starify – All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
-
 {% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
-      }
-    ]
-  }
-
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_linklist",
+      "label": "Footer menu",
+      "default": "footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": false
+    }
+  ]
+}
 {% endschema %}

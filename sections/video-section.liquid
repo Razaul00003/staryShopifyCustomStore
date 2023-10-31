@@ -1,0 +1,69 @@
+<div class="container animation-container ">
+  <div class="animation-content row flex-sm-column-reverse flex-md-column-reverse flex-lg-row align-items-center">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <video
+        class="w-100 h-100"
+        src="https://starify.me/wp-content/uploads/2023/08/screen.webm"
+        autoplay
+        loop
+        muted
+      ></video>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6">
+      <div>
+        <span class="bg-dark text-primary rounded p-1">Starify.me</span> <br>
+        <p class="text-gray fs-1 pb-3">Comment ça marche</p>
+        <p class="text-gray fs-5 ">Vous présentez la carte Starify à votre client au moment de l’encaissement.</p>
+        <p class="text-gray fs-5">
+          Grâce au NFC / QR code installé sur la carte, il a juste à approcher son smartphone pour que la page des avis
+          Google apparaisse.
+        </p>
+        <ul class="">
+          <li class=" fs-6">Tendez la carte Starify à votre client</li>
+          <li class=" fs-6">Tendez la carte Starify à votre client</li>
+          <li class=" fs-6">Tendez la carte Starify à votre client</li>
+          <li class=" fs-6">Tendez la carte Starify à votre client</li>
+        </ul>
+        <button class=" btn btn-primary rounded-pill btn-outline-primary  px-sm-2 py-1 px-3 py-2 font-weight-bold">
+          Acheter maintenant
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Video Section",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+<script>
+    const containers = document.querySelectorAll('.animation-container');
+
+  window.addEventListener('scroll', () => {
+    containers.forEach(container => {
+      const containerRect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (containerRect.top < windowHeight && containerRect.bottom >= 0) {
+        const content = container.querySelector('.animation-content');
+        content.style.transform = 'translateY(0)';
+      } else {
+        const content = container.querySelector('.animation-content');
+        content.style.transform = 'translateY(100%)';
+      }
+    });
+  });
+</script>
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -2,7 +2,7 @@
   assign logo = section.settings.logo
   assign assign menu = section.settings.menu
   assign annoucement = section.settings.announcement_bar_enabled
-  assign logoSize= section.settings.logo_max_width
+  assign logoSize = section.settings.logo_max_width
 %}
 
 {% comment %}
@@ -12,20 +12,20 @@
   <div class="container">
     {% if annoucement != false %}
       <div class="d-flex justify-content-center align-items-center  mt-0 pt-1">
-      <span class='text-center'>Excellent {% render 'trustpilot' %}</span>
-    </div>
-      {% endif %}
-    
+        <span class="text-center">Excellent {% render 'trustpilot' %}</span>
+      </div>
+    {% endif %}
+
     <nav class=" navbar navbar-expand-md navbar-light justify-between">
       <a class="navbar-brand" href="{{ routes.root_url }}">
         {% if logo != null %}
-          <img src="{{ logo | img_url }}" width="{{logoSize}}px" height="auto" alt="{{ shop.name }}">
+          <img src="{{ logo | image_url }}" width="{{logoSize}}px" height="auto" alt="{{ shop.name }}">
         {% else %}
           {{ shop.name }}
         {% endif %}
       </a>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler border-primary text-primary"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -33,11 +33,11 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-primary"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav m-auto d-flex p-2 justify-content-around">
+        <ul class="navbar-nav m-auto d-flex p-sm-1 p-md-2 justify-content-around">
           {% for link in menu.links %}
             <li class=" nav-item {% if link.links.size > 0 %}dropdown{% endif %} h6">
               <a
@@ -62,7 +62,9 @@
           {% endfor %}
         </ul>
       </div>
-      <button class=" btn btn-primary rounded-pill px-4 py-2 font-weight-bold ">Acheter maintenant</button>
+      <button class=" btn btn-primary rounded-pill px-sm-2 px-md-3 px-lg-5 py-2 font-weight-bold ">
+        Acheter maintenant
+      </button>
     </nav>
   </div>
 </section>

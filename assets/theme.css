@@ -1,4 +1,4 @@
-.carousel-item:before {
+ts.carousel-item:before {
   position: absolute;
   content: "";
   background-color: #00000073;
@@ -207,6 +207,13 @@ span.compare-price {
 .hover-bg:hover {
   background-color: var(--bs-primary);
 }
+.hover-bg img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+.hover-bg:hover img {
+  filter: grayscale(0%);
+}
 .carousel-inner {
   display: flex !important;
 }
@@ -230,10 +237,7 @@ span.compare-price {
   padding: 5px;
   border-radius: 50%;
 }
-.owl-nav .owl-prev span,
-.owl-nav .owl-next span {
-  font-size: 34px !important;
-}
+
 .owl-nav .owl-prev {
   top: 20%;
   left: 0%;
@@ -242,6 +246,23 @@ span.compare-price {
   top: 20%;
   right: 0%;
 }
+.owl-nav button {
+  border-radius: 50% !important;
+  height: 40px !important;
+  width: 40px !important;
+  text-align: center !important;
+  background-color: var(--bs-primary) !important;
+  display: flex;
+  justify-items: center !important;
+  align-items: center !important;
+}
+.owl-nav .owl-prev span,
+.owl-nav .owl-next span {
+  font-size: 25px !important;
+  height: 100%;
+  width: 100%;
+  text-align: center !important;
+}
 .rotate-image {
   background-image: url("https://starify.me/wp-content/uploads/2022/11/main-canvas-6380d13bad9867efa29e03bb.png");
   background-size: cover;
@@ -249,7 +270,7 @@ span.compare-price {
   width: 100px;
   height: 100px;
   top: 60%;
-  left: 5%;
+  left: 10%;
 }
 .rounded-4 {
   border-radius: 10% !important;

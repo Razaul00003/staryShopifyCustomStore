@@ -114,16 +114,21 @@
     $('.owl-carousel').owlCarousel({
       loop:true,
       margin:10,
+      autoplay: true,
+      autoPlaySpeed: 2000,
+      autoPlayTimeout: 2000,
+      autoplayHoverPause: true,
+      slideTransition: 'linear',
       nav:true,
       responsive:{
           0:{
               items:2
           },
           600:{
-              items:5
+              items:4
           },
           1000:{
-              items:7
+              items:5
           }
       }
   })

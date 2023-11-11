@@ -25,10 +25,9 @@
             <span class="custom-strikethrough text-gray-dark pe-3">{{ product.compare_at_price }}</span>
             {{- product.price }}
           </p>
-
-          <div class="action">
-            <a href="{{ product.url }}" class="btn btn-primary w-100">View Details</a>
-          </div>
+          <button class="d-sm-none d-md-block btn btn-primary rounded-pill px-sm-2 px-md-3 px-lg-5 py-1 font-weight-bold ">
+            <a href="{{ product.url }}" class="btn  w-100">View Details</a>
+          </button>
         </div>
       </div>
     </div>
@@ -39,6 +38,11 @@
     $('.owl-carousel').owlCarousel({
       loop:true,
       margin:10,
+      autoplay: true,
+      autoPlaySpeed: 2000,
+      autoPlayTimeout: 2000,
+      autoplayHoverPause: true,
+      slideTransition: 'linear',
       nav:true,
       responsive:{
           0:{

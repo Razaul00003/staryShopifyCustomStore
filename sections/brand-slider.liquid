@@ -4,72 +4,72 @@
   </div>
   <div class="owl-carousel owl-theme animation-content">
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand1.png' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2  hover-bg">
         <img src="{{ 'brand10.png' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand11.png' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand12.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand13.png' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand14.png' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand2.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand3.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand4.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm rounded">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand5.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand6.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand7.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand8.webp' | asset_url }}">
       </div>
     </div>
     <div class="item shadow-sm">
-      <div class="p-2">
+      <div class="p-2 hover-bg">
         <img src="{{ 'brand9.png' | asset_url }}">
       </div>
     </div>
@@ -79,6 +79,11 @@
     $('.owl-carousel').owlCarousel({
       loop:true,
       margin:10,
+      autoplay: true,
+      autoPlaySpeed: 2000,
+      autoPlayTimeout: 2000,
+      autoplayHoverPause: true,
+      slideTransition: 'linear',
       nav:true,
       responsive:{
           0:{
